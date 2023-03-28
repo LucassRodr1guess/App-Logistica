@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      AC Calculos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+ 
+
+
+  <ion-item>
+    <ion-label>Selecione o tipo de envio:</ion-label>
+    <ion-select interface="popover" class="custom-options" [(ngModel)]="ft">
+      <ion-select-option value="regular">Regular</ion-select-option>
+      <ion-select-option value="expresso">Expresso</ion-select-option>
+      <ion-select-option value="agendado">Agendado</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label position="floating">Insira o número de produtos:</ion-label>
+    <ion-input [(ngModel)]="qdtp" type="number"></ion-input>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label position="floating">Insira a distância (Km):</ion-label>
+    <ion-input [(ngModel)]="distancia" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Insira o peso do(s) produto(s) (Kg):</ion-label>
+    <ion-input [(ngModel)]="pp" type="number"></ion-input>
+  </ion-item>
+
+  <table>
+    <tr>
+      <th>
+         Quantidade de Produtos
+      </th>
+      <th>Desconto</th>
+      </tr>
+      <tr>
+        <td>6 ou mais produtos</td>
+        <td> 10% OFF</td>
+      </tr>
+    
+  </table>
+
+  <ion-button class="botao" (click)="verificarRadio()">Preço Envio</ion-button>
+
+  <ion-item-group class="resultado">
+    <p>Custo de envio: R$</p>
+    <ion-input [readonly]="true" class="precof" value="{{precof}}"></ion-input>
+  </ion-item-group>
+
+ 
+</ion-content>
+
